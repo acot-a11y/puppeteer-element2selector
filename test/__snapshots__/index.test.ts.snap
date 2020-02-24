@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`simple - #note - {"seedMinLength": 2} 1`] = `"section > #note"`;
+
+exports[`simple - #note - undefined 1`] = `"#note"`;
+
+exports[`simple - .blog1 p:nth-of-type(3) - undefined 1`] = `".blog1 > section:nth-child(1) > p:nth-child(4)"`;
+
+exports[`simple - article:nth-of-type(2) > section > h2 - undefined 1`] = `".blog2 > section:nth-child(1) > h2"`;
+
+exports[`simple - h1 - undefined 1`] = `"h1"`;
