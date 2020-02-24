@@ -14,9 +14,10 @@
     "build:bridge": "rollup -c",
     "test": "jest",
     "format": "prettier --write \"**/*.+(js|css|md|yml|json)\"",
+    "release": "standard-version",
     "prebuild": "yarn clean",
     "pretest": "yarn build",
-    "release": "standard-version"
+    "prerelease": "yarn build"
   },
   "keywords": [
     "puppeteer",

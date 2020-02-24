@@ -44,6 +44,10 @@ console.log(`Result: ${selector}`); // Result: #tophf > input:nth-child(1)
   - `threshold` <[number]> Max number of selectors to check before falling into `nth-child` usage. Checking for uniqueness of selector is very costs operation, if you have DOM tree depth of 5, with 5 classes on each level, that gives you more than 3k selectors to check. [finder] uses two step approach so it's reaching this threshold in some cases twice. Default `1000` is good enough in most cases.
 - returns: <[string]>
 
+## CHANGELOG
+
+See [CHANGELOG.md](./CHANGELOG.md)
+
 ## License
 
 [MIT License @ wadackel](./LICENSE)
