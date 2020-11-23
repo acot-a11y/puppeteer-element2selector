@@ -1,12 +1,23 @@
-import { ElementHandle } from 'puppeteer';
-import { Options as FinderOptions } from '@medv/finder';
+import type { ElementHandle } from 'puppeteer';
+import type { Options as FinderOptions } from '@medv/finder';
 import fs from 'fs';
 import path from 'path';
 
 const code = fs.readFileSync(path.resolve(__dirname, 'bridge.js'));
 const evaluator = eval(`(node, opts) => {
   ${code};
-  return finder(node, opts);
+  try {
+    const selector = finder(node, opts);
+    return {
+      error: null,
+      selector,
+    };
+  } catch (e) {
+    return {
+      error: e.message,
+      selector: null,
+    };
+  }
 }`);
 
 export type Options = Partial<
@@ -17,7 +28,19 @@ export const element2selector = async (
   element: ElementHandle,
   options?: Options,
 ): Promise<string> => {
-  const selector = await element.evaluate(evaluator, options as any);
+  const result = (await element.evaluate(evaluator, options as any)) as
+    | {
+        error: string;
+        selector: null;
+      }
+    | {
+        error: null;
+        selector: string;
+      };
 
-  return selector as string;
+  if (result.error != null) {
+    throw new Error(result.error);
+  }
+
+  return result.selector;
 };

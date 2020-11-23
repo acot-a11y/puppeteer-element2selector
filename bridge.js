@@ -1,3 +1,2 @@
-import finder from '@medv/finder';
-
+import { finder } from '@medv/finder';
 export default finder;

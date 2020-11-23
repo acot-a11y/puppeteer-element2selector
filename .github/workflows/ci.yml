@@ -1,5 +1,5 @@
 name: Continuous Integration
-on: push
+on: [push, pull_request]
 
 jobs:
   build:
@@ -20,9 +20,6 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - name: Install dependencies
-        run: yarn --frozen-lockfile
-
       - name: Cache node_modules
         uses: actions/cache@v1
         id: yarn-cache
@@ -31,6 +28,9 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.node }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node }}-yarn-
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
 
       - name: Test
         run: yarn test

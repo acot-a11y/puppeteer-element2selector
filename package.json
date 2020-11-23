@@ -39,26 +39,26 @@
     "puppeteer": ">= 2.1.0"
   },
   "dependencies": {
-    "@medv/finder": "^1.1.2"
+    "@medv/finder": "^2.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.2",
-    "@rollup/plugin-node-resolve": "^7.1.1",
-    "@types/jest": "^25.1.3",
-    "@types/jest-environment-puppeteer": "^4.3.1",
-    "@types/puppeteer": "^2.0.0",
-    "husky": "^4.2.3",
-    "jest": "^25.1.0",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@types/jest": "^26.0.15",
+    "@types/jest-environment-puppeteer": "^4.4.0",
+    "@types/puppeteer": "^5.4.0",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
     "jest-puppeteer": "^4.4.0",
-    "lint-staged": "^10.0.7",
-    "prettier": "^1.19.1",
-    "puppeteer": "^2.1.1",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.2.0",
+    "puppeteer": "^5.5.0",
     "rimraf": "^3.0.2",
-    "rollup": "^1.31.1",
-    "serve-handler": "^6.1.2",
-    "standard-version": "^7.1.0",
-    "ts-jest": "^25.2.1",
-    "typescript": "^3.8.2"
+    "rollup": "^2.33.3",
+    "serve-handler": "^6.1.3",
+    "standard-version": "^9.0.0",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.2"
   },
   "husky": {
     "hooks": {
@@ -67,8 +67,7 @@
   },
   "lint-staged": {
     "*.{js,css,md,yml,json}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }

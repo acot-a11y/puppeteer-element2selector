@@ -14,3 +14,16 @@ test.each<[string, Options | undefined]>([
   const element = await page.$(input);
   expect(await element2selector(element!, options)).toMatchSnapshot();
 });
+
+test('error', async () => {
+  const element = await page.$('p');
+
+  await expect(
+    element2selector(element!, {
+      seedMinLength: 0,
+      optimizedMinLength: 0,
+      threshold: 0,
+      maxNumberOfTries: 0,
+    }),
+  ).rejects.toThrow('Selector was not found.');
+});
