@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-element2selector",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A utility to convert puppeteer ElementHandle to CSS Selector.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

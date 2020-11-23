@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/wadackel/puppeteer-element2selector/compare/v0.0.1...v0.0.2) (2020-11-23)
+
+### Bug Fixes
+
+- Improve error handling ([e29ef2b](https://github.com/wadackel/puppeteer-element2selector/commit/e29ef2b30b466142aedafa93b094ffbc08a5bd0e))
+
 ### 0.0.1 (2020-02-24)
 
 ### Features
