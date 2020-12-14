@@ -1,4 +1,4 @@
-import type { ElementHandle } from 'puppeteer';
+import type { ElementHandle } from 'puppeteer-core';
 import type { Options as FinderOptions } from '@medv/finder';
 import fs from 'fs';
 import path from 'path';
